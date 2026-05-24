@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Today's Corporate Lunch Specials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Daily Coffee Café Knysna - Specials</title>
     <style>
-        html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #ffffff; }
-        iframe { width: 100%; height: 100%; border: none; }
+        html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #000000; position: relative; width: 100%; -webkit-text-size-adjust: 100%; }
+        .fullscreen-graphic { width: 100%; height: 100%; object-fit: cover; object-position: center; position: absolute; top: 0; left: 0; z-index: 1; }
+        .whatsapp-touch-target { position: absolute; left: 0; width: 100%; height: 15%; bottom: 0; z-index: 2; cursor: pointer; -webkit-tap-highlight-color: transparent; }
     </style>
 </head>
 <body>
-    <iframe src="https://docs.google.com/gview?embedded=true&url=https://marketinggroup815.github.io/tdkofficespecials/tdk-lunch-specials-1.pdf"></iframe>
+
+    <img src="./tdk-lunch-specials-1.png" alt="Today's Office Specials Menu" class="fullscreen-graphic">
+
+    <a href="https://wa.me/27626824244?text=Hi%20there!%20%F0%9F%91%8B%20%0AI'd%20like%20to%20order%20the%20Daily%20Office%20Lunch%20Special%20from%20The%20Daily%20Coffee%20Caf%C3%A9%20Knysna.%20%E2%98%95%0A%F0%9F%93%9D%20*MY%20ORDER%20DETAILS:*%0A%E2%80%A2%20Name%20%26%20Surname:%20%0A%E2%80%A2%20Company:%20%0A%E2%80%A2%20Address:%0A%E2%80%A2%20Items%20%26%20Quantities:%0A%E2%80%A2%20Special%20Notes%2FDietary:%0A%F0%9F%95%92%20*LOGISTICS:*%0A%E2%80%A2%20Collection%20or%20Delivery%3F:%0A%E2%80%A2%20Preferred%20Time:" class="whatsapp-touch-target"></a>
+
 </body>
 </html>
