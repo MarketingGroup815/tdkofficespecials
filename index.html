@@ -6,16 +6,25 @@
     <title>The Daily Coffee Café Knysna - Specials</title>
     <style>
         html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #0b0c10; display: flex; justify-content: center; align-items: center; width: 100%; -webkit-text-size-adjust: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        .menu-container { position: relative; width: 100%; height: 100%; max-width: 56.25vh; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 30px rgba(0,0,0,0.6); }
-        .fullscreen-graphic { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
-        .whatsapp-touch-target { position: absolute; left: 0; width: 100%; height: 15%; bottom: 0; z-index: 2; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+        
+        /* The dynamic bounding box: locks to the exact visible space of the image asset across all screens */
+        .menu-container { position: relative; height: 100%; width: 100%; max-height: 100vh; max-width: 100vw; display: flex; justify-content: center; align-items: center; }
+        
+        /* The structural fix: contain ensures 100% visibility of the graphic with zero side-cropping or clipping */
+        .fullscreen-graphic { max-height: 100%; max-width: 100%; object-fit: contain; display: block; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+        
+        /* The responsive overlay hack: using aspect-ratio matching ensures the touch target shrinks and stretches precisely with the visible image, keeping it perfectly pinned over the yellow button element on every screen size */
+        .whatsapp-touch-target { position: absolute; aspect-ratio: 9 / 16; height: 100%; max-height: 100vh; max-width: 100vw; pointer-events: none; display: flex; align-items: flex-end; justify-content: center; }
+        .touch-area { width: 100%; height: 15%; pointer-events: auto; cursor: pointer; -webkit-tap-highlight-color: transparent; }
     </style>
 </head>
 <body>
 
     <div class="menu-container">
         <img src="./tdk-lunch-specials-1.png" alt="Today's Office Specials Menu" class="fullscreen-graphic">
-        <a href="https://wa.me/27626824244?text=Hi%20there!%20%F0%9F%91%8B%20%0AI'd%20like%20to%20order%20the%20Daily%20Office%20Lunch%20Special%20from%20The%20Daily%20Coffee%20Caf%C3%A9%20Knysna.%20%E2%98%95%0A%F0%9F%93%9D%20*MY%20ORDER%20DETAILS:*%0A%E2%80%A2%20Name%20%26%20Surname:%20%0A%E2%80%A2%20Company:%20%0A%E2%80%A2%20Address:%0A%E2%80%A2%20Items%20%26%20Quantities:%0A%E2%80%A2%20Special%20Notes%2FDietary:%0A%F0%9F%95%92%20*LOGISTICS:*%0A%E2%80%A2%20Collection%20or%20Delivery%3F:%0A%E2%80%A2%20Preferred%20Time:" class="whatsapp-touch-target"></a>
+        <div class="whatsapp-touch-target">
+            <a href="https://wa.me/27626824244?text=Hi%20there!%20%F0%9F%91%8B%20%0AI'd%20like%20to%20order%20the%20Daily%20Office%20Lunch%20Special%20from%20The%20Daily%20Coffee%20Caf%C3%A9%20Knysna.%20%E2%98%95%0A%F0%9F%93%9D%20*MY%20ORDER%20DETAILS:*%0A%E2%80%A2%20Name%20%26%20Surname:%20%0A%E2%80%A2%20Company:%20%0A%E2%80%A2%20Address:%0A%E2%80%A2%20Items%20%26%20Quantities:%0A%E2%80%A2%20Special%20Notes%2FDietary:%0A%F0%9F%95%92%20*LOGISTICS:*%0A%E2%80%A2%20Collection%20or%20Delivery%3F:%0A%E2%80%A2%20Preferred%20Time:" class="touch-area"></a>
+        </div>
     </div>
 
 </body>
